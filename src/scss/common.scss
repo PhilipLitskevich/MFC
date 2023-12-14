@@ -1,0 +1,17 @@
+// Заголовки, общие БЄМ блоки и проче...
+.title {
+	color: $mainColor;
+	font-size: rem(80);
+	font-weight: 600;
+	line-height: 120.157%;
+	text-transform: uppercase;
+	/* 96.125px */
+}
+.title--red {
+	color: $secondMainColor;
+}
+
+.title--small {
+	font-size: rem(35);
+	line-height: 120.157%;
+}
