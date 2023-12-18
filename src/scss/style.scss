@@ -100,6 +100,7 @@ body {
 	[class*="__container"] {
 		@if ($maxWidthContainer>0) {
 			max-width: rem($maxWidthContainer);
+			@include adaptiveValue("max-width", 1500, 900, 1920, 1000, 1);
 			box-sizing: content-box;
 			margin: 0 auto;
 		}

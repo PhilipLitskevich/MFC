@@ -1,7 +1,9 @@
 // Заголовки, общие БЄМ блоки и проче...
 .title {
 	color: $mainColor;
-	font-size: rem(80);
+	// font-size: rem(80);
+	@include adaptiveValue("font-size", 80, 50, $containerWidth, 400, 1);
+	
 	font-weight: 600;
 	line-height: 120.157%;
 	text-transform: uppercase;
@@ -14,6 +16,7 @@
 .title--small {
 	font-size: rem(35);
 	line-height: 120.157%;
+	@include adaptiveValue("font-size", 35, 10, 1900, 800, 1);
 }
 
 .hvr-underline-from-center {

@@ -72,7 +72,14 @@
 .menu__link {
 	color: $secondMainColor;
 	font-size: rem(20);
+	overflow: visible;
 
+	&.hvr-underline-from-center::before {
+		background-color: $secondMainColor;
+		bottom: rem(-10);
+		z-index: 10;
+		height: rem(4);
+	}
 }
 
 //====================================================================================================
