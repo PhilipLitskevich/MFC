@@ -10,10 +10,17 @@
 	line-height: normal;
 	text-align: center;
 	border-radius: 73px;
+	border: 2px solid $secondMainColor;
 	background-color: $secondMainColor;
+	transition: .3s ease;
+	transition-property: color, background-color;
 
 	@media (any-hover: hover) {
-		&:hover {}
+		&:hover {
+			background-color: #FFF;
+			color: $secondMainColor;
+
+		}
 	}
 
 	&._fw {

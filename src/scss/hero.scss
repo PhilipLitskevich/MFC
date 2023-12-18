@@ -85,6 +85,9 @@
 		height: auto;
 	}
 
+	&__image{
+		perspective: 2000px;
+	}
 	&__image,
 	&__image--back {
 		position: absolute;
