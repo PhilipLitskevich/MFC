@@ -76,7 +76,7 @@
 				width: rem(353);
 				height: rem(235);
 				border-radius: 35px;
-				border: 2px solid #85292D;
+				border: 2px solid $secondMainColor;
 				background-size: cover;
 
 				box-shadow: 0px 0px 70px 0px rgba(133, 41, 45, 0.20);
@@ -176,6 +176,7 @@
 
 	path {
 		transition: fill .3s ease;
+		fill: $secondMainColor;
 	}
 
 	&:hover {
