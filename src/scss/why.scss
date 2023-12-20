@@ -1,12 +1,19 @@
-.swction__why {}
+.section__why {
+	margin-top: rem(50);
+}
 
 .why {}
 
 .why__container {}
 
-.why__title {}
-
-.title {}
+.why__title {
+	@media (max-width:$mobile){
+		 text-align: center; 
+	}
+	@media (max-width:$mobileSmall){
+		@include adaptiveValue("font-size", 50, 40, 360, 320, 1); 
+	}
+}
 
 .why__list {
 	margin-top: rem(45);
@@ -14,7 +21,17 @@
 	width: fit-content;
 	grid-template-rows: repeat(2, 1fr);
 	grid-template-columns: repeat(3, 1fr);
-	gap: rem(60);
+	@include adaptiveValue("gap", 60, 53, $containerWidth, 400, 1);
+	@media (max-width: em(900)){
+		margin: rem(30) auto 0;
+		grid-template-columns: repeat(2, 1fr); 
+		grid-template-rows: repeat(3, 1fr);
+	}
+	@media (max-width:$mobileSmall){
+		grid-template-columns: 1fr;	  
+		grid-template-rows: repeat(5, 1fr);
+		
+	}
 }
 
 .why__list-item {

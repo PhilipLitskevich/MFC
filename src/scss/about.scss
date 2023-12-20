@@ -7,6 +7,11 @@
 
 	&__title {
 		max-width: rem(980);
+		@include adaptiveValue("font-size", 80, 35, $containerWidth, 400, 1);
+
+		@media (max-width:$mobile) {
+			text-align: center;
+		}
 	}
 
 	&__slider {
@@ -18,9 +23,13 @@
 		margin-top: rem(-36);
 	}
 
-	&__wrapper {}
-
-	&__slide {}
+	&__wrapper {
+		@media (max-width:$mobile) {
+			display: flex;
+			flex-direction: column;
+			gap: rem(46);
+		}
+	}
 
 	.swiper-slide__container {}
 
@@ -34,34 +43,73 @@
 
 		display: flex;
 		justify-content: space-between;
+
+		@media (max-width:$mobile) {
+			flex-direction: column;
+			margin: 0 auto;
+			width: min(100%, rem(500));
+
+			border-radius: 48px;
+			background: #FFF;
+			text-align: center;
+			align-items: center;
+			padding: rem(28) rem(20) rem(21);
+
+			@include adaptiveValue("padding-top", 50, 28, 768, 340, 1);
+			@include adaptiveValue("padding-right", 30, 20, 768, 340, 1);
+			@include adaptiveValue("padding-bottom", 30, 21, 768, 340, 1);
+			@include adaptiveValue("padding-left", 50, 28, 768, 340, 1);
+			overflow: hidden;
+
+			box-shadow: 0px 0px 70.7px 0px rgba(0, 0, 0, 0.20);
+		}
 	}
 
 	&__slide-content {
+		width: fit-content;
 
 		&--1 {
 			max-width: rem(450);
+
+			@media (max-width:$tablet) {
+				max-width: 45%;
+			}
 		}
 
 		&--2 {
-			max-width: rem(1006);
+			max-width: 67.1%;
+			/* 1006/1500 */
 		}
 
 		&--3 {
-			max-width: rem(670);
+			max-width: 44.7%;
+			/* 670/1500 */
+		}
+
+		@media (max-width:$mobile) {
+			max-width: none;
 		}
 	}
 
 	&__slide-title {
-		font-size: rem(50);
-		font-weight: 400;
+		@include adaptiveValue("font-size", 50, 30, $containerWidth, 400, 1);
+
+		font-weight: 600;
 		line-height: 120.157%;
+		width: fit-content;
+
 		/* 60.078px */
+		@media (max-width:$mobile) {
+			text-align: center;
+			width: 100%;
+		}
 	}
 
 	&__slide-text {
-		font-size: rem(20);
+		@include adaptiveValue("font-size", 20, 13, $containerWidth, 400, 1);
 		line-height: 120.157%;
 		/* 24.031px */
+		margin-top: rem(9);
 	}
 
 	&__slide-images {
@@ -72,9 +120,11 @@
 			width: rem(470);
 			height: auto;
 
+
 			.about__slide-image {
-				width: rem(353);
-				height: rem(235);
+				@include adaptiveValue("width", 353, 289, $containerWidth, 768, 1);
+				// height: rem(235);
+				aspect-ratio: 353/235;
 				border-radius: 35px;
 				border: 2px solid $secondMainColor;
 				background-size: cover;
@@ -82,14 +132,47 @@
 				box-shadow: 0px 0px 70px 0px rgba(133, 41, 45, 0.20);
 
 				&--1 {
-					inset: rem(-129) auto auto 0;
+					left: 0;
+					top: rem(-129);
 					background-image: url('@img/about/1-1.jpg');
+
+					@media (max-width: em(1200)) {
+						top: rem(-109);
+					}
 				}
 
 				&--2 {
-					inset: auto rem(-93) rem(-147) auto;
+					right: rem(-93);
+					bottom: rem(-147);
 					background-image: url('@img/about/1-2.jpg');
 				}
+
+				@media (max-width: em(1200)) {
+					right: rem(30);
+					left: auto;
+				}
+
+				@media (max-width:$mobile) {
+					width: 100%;
+				}
+			}
+
+			.about__slide-images-wrapper {
+				@media (max-width:$mobile) {
+					width: min(100%, rem(353));
+					position: static;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					gap: rem(21);
+					margin: 0 auto;
+
+				}
+			}
+
+			@media (max-width:$mobile) {
+				margin-top: rem(20);
+				width: min(100%, rem(353))
 			}
 		}
 
@@ -104,7 +187,17 @@
 				inset: auto 0 rem(-100) auto;
 				background-image: url('@img/about/2.png');
 			}
+
+			@media (max-width:$mobile) {
+				position: relative;
+				right: rem(-30);
+				bottom: rem(-30);
+
+				width: min(100%, rem(400));
+				align-self: flex-end;
+			}
 		}
+
 		&--3 {
 			width: rem(452);
 			height: auto;
@@ -116,6 +209,12 @@
 				inset: auto 0 rem(-100) auto;
 				background-image: url('@img/about/3.png');
 			}
+
+			@media (max-width:$mobile) {
+				position: relative;
+				bottom: rem(-21);
+				width: min(100%, rem(380));
+			}
 		}
 
 	}
@@ -124,7 +223,6 @@
 		position: relative;
 		width: 100%;
 		min-height: 100%;
-
 	}
 
 	&__slide-image {
@@ -132,6 +230,10 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: contain;
+
+		@media (max-width:$mobile) {
+			position: static;
+		}
 	}
 
 	&__slide-image--1-1 {}
@@ -145,6 +247,10 @@
 
 .navigation__container {
 	margin-top: rem(-80);
+
+	@media (max-width:$mobile) {
+		display: none;
+	}
 }
 
 .navigation-wrapper {

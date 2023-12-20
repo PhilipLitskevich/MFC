@@ -1,32 +1,41 @@
 .section-delivery {
-	padding-bottom: rem(50);
+	// padding-bottom: rem(50);
 }
 
 .delivery {
 	&__container {}
 
-	&__title {}
+	&__title {
+		@media (max-width:$mobile){
+			text-align: center;
+	 }
+	}
 
 	&__wrapper {
-		margin-top: rem(31);
-		gap: rem(50);
+		margin-top: rem(30);
+		@include adaptiveValue("gap", 142, 40, 1900, 800, 1);
 		display: flex;
-		justify-content: space-between;
+		// justify-content: space-between;
+
+		@media (max-width:$mobile){
+			 flex-direction: column;
+			 text-align: center;
+		}
 	}
 
 	&__moscow {
 		.delivery__list-item:not(:last-child) {
-			margin-bottom: rem(10);
+			@include adaptiveValue("margin-bottom", 10, 6, $containerWidth, 400, 1);
 		}
 	}
 
 	&__moscow-title,
 	&__russia-title {
-		font-size: rem(35);
+		@include adaptiveValue("font-size", 35, 20, $containerWidth, 400, 1);
 		font-weight: 400;
 		line-height: 120.157%;
 		/* 42.055px */
-		margin-bottom: rem(15);
+		@include adaptiveValue("margin-bottom", 15, 11, $containerWidth, 400, 1);
 	}
 
 	&__russia {
@@ -34,7 +43,7 @@
 		flex: 0 1 30%;
 
 		.delivery__list-item:not(:last-child) {
-			margin-bottom: rem(15);
+			@include adaptiveValue("margin-bottom", 15, 6, $containerWidth, 400, 1);
 		}
 	}
 
@@ -43,7 +52,7 @@
 	&__list {}
 
 	&__list-item {
-		font-size: rem(25);
+		@include adaptiveValue("font-size", 25, 13, $containerWidth, 400, 1);
 		font-weight: 400;
 		line-height: 120.157%;
 		/* 30.039px */
