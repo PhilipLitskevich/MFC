@@ -10,6 +10,10 @@
 import Swiper from 'swiper';
 import {Navigation} from 'swiper/modules';
 
+if (typeof Navigation === 'undefined') {
+  console.error('Module Navigation is not available');
+}
+
 // Стили Swiper
 // Базовые стили
 import "../../scss/base/swiper.scss";
@@ -23,6 +27,7 @@ import "../../scss/base/swiper.scss";
 const breakpoint = window.matchMedia( '(max-width:48em)' );
 // keep track of swiper instances to destroy later
 let aboutSwiper; 
+
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
@@ -33,7 +38,8 @@ const breakpointChecker = function() {
 		 // clean up old instances and inline styles when available
 		 if (aboutSwiper !== undefined) {
 				aboutSwiper.destroy(true, true);
-				aboutSwiper = undefined; // обнуляем экземпляр Swiper
+				aboutSwiper = undefined;
+				console.log(aboutSwiper + ' после разрушения')
 		 }
 		 // or/and do nothing
 		 return;
@@ -54,6 +60,7 @@ const enableSwiper = function() {
 		// для конкретного случая
 		modules: [Navigation],
 
+		slidesPerGroupSkip: 0, // установите значение по умолчанию
 		slidesPerView: 1,
 		spaceBetween: 0,
 		autoHeight: true,
@@ -66,6 +73,7 @@ const enableSwiper = function() {
 			nextEl: '.swiper-button-next',
 		},
 	});
+	console.log(aboutSwiper + ' после создания')
 };
 
 //////////////////////////////////////////////////////////////////
@@ -76,62 +84,3 @@ const enableSwiper = function() {
 breakpoint.addListener(breakpointChecker);
 // kickstart
 breakpointChecker();
-
-
-// Инициализация слайдеров
-// function initSliders() {
-// 	// Перечень слайдеров
-// 	// Проверяем, есть ли слайдер на стронице
-// 	if (document.querySelector('.about__slider')) { // Указываем скласс нужного слайдера
-// 		// Создаем слайдер
-// 		aboutSwiper = new Swiper('.about__slider', { // Указываем скласс нужного слайдера
-// 			// Подключаем модули слайдера
-// 			// для конкретного случая
-// 			modules: [Navigation],
-
-// 			observer: true,
-// 			observeParents: true,
-// 			slidesPerView: 1,
-// 			spaceBetween: 0,
-// 			autoHeight: true,
-// 			speed: 1000,
-// 			loop: true,
-	
-// 			// Кнопки "влево/вправо"
-// 			navigation: {
-// 				prevEl: '.swiper-button-prev',
-// 				nextEl: '.swiper-button-next',
-// 			},
-// 		});
-// 	}
-// }
-
-// function destroySwiper() {
-//   if (aboutSwiper !== undefined && aboutSwiper !== null) {
-//     aboutSwiper.destroy(true, true);
-//     // aboutSwiper.disable();
-// 		console.log('сработало')
-//     // aboutSwiper = undefined;
-//   }
-// }
-
-// function checkBreakpoint() {
-//   // Получите текущую ширину экрана
-//   let windowWidth = window.innerWidth;
-
-//   // Определите брейкпоинт, при котором нужно разобрать слайдер
-//   let breakpoint = 768;
-
-//   // Проверьте, находится ли ширина экрана ниже брейкпоинта
-//   if (windowWidth < breakpoint) {
-//     // Разобрать слайдер, если он уже инициализирован
-//     destroySwiper();
-//   } else {
-//     // Инициализировать слайдер, если он не инициализирован
-//     initSliders();
-//   }
-// }
-
-// // Запустите функцию при загрузке страницы и изменении размера окна
-// window.addEventListener('resize', checkBreakpoint);
-// window.addEventListener('load', checkBreakpoint);

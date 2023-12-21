@@ -25,7 +25,6 @@
 
 	&__left {
 		flex: 0 1;
-		// flex-basis:  rem(450);
 		@include adaptiveValue("flex-basis", 450, 300, $containerWidth, 768, 1);
 
 		@media (max-width:$mobile){
@@ -131,10 +130,6 @@
 		span {
 			display: block;
 		}
-		&.hvr-underline-from-center:before{
-			// bottom: rem(-2);
-			// overflow-y: visible;
-		}
 	}
 
 	&__map {
@@ -142,7 +137,6 @@
 		inset: auto 0 0 auto;
 		width: rem(751);
 		height: 100%;
-		// aspect-ratio: 751/420;
 		background-color: $secondMainColor;
 		@include adaptiveValue("width", 751, 250, 1900, 1200, 1);
 
@@ -154,19 +148,6 @@
 		@media (max-width: em(1200)){
 			  display: none;
 		}
-		// &::after{
-		// 	content:'';
-		// 	position: absolute;
-		// 	top: rem(0);
-		// 	left: rem(0);
-		// 	bottom: rem(0);
-		// 	left: rem(0);
-		// 	width: 100%;
-		// 	height: 100%;
-		// 	background-color: $secondMainColor;
-		// 	pointer-events: none;
-		// 	opacity: .7;
-		// }	
 	}
 }
 

@@ -17,6 +17,10 @@
 	font-size: rem(35);
 	line-height: 120.157%;
 	@include adaptiveValue("font-size", 35, 10, 1900, 800, 1);
+	@media (max-width:$mobile){
+		@include adaptiveValue("font-size", 20, 10, 768, 340, 1);
+		  
+	}
 }
 
 .hvr-underline-from-center {

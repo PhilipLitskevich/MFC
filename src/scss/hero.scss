@@ -1,5 +1,6 @@
 .section-hero {
 	width: 100%;
+	overflow: hidden;
 }
 
 .hero {
@@ -7,22 +8,44 @@
 		display: flex;
 		width: 100%;
 		height: 100%;
-		padding-top: max(rem(130), 25vh);
+		padding-top: max(rem(134), 25vh);
 		padding-bottom: rem(60);
 		/* 277/925 */
 
 		gap: rem(27);
 		// @include adaptiveValue("gap", 27, 50, 1900, 1500, 1);
+
+		@media (max-width:$mobile) {
+			box-sizing: border-box;
+			position: relative;
+			flex-direction: column;
+			align-items: center;
+			padding-top: rem(134);
+		}
 	}
 
 	&__content {
 		max-width: rem(839);
+
 		// @include adaptiveValue("max-width", 839, 400, $containerWidth, 1000, 1);
+		@media (max-width:$mobile) {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+		}
 	}
-	
+
 	&-title {
 		// max-width: 95%;
-		@include adaptiveValue("font-size", 80, 25, 1900, 400, 1);
+		@include adaptiveValue("font-size", 80, 40, 1900, 768, 1);
+
+		@media (max-width:$mobile) {
+			text-align: center;
+			@include adaptiveValue("max-width", 500, 324, 768, 360, 1);
+			@include adaptiveValue("font-size", 50, 25, 768, 360, 1);
+		}
 	}
 
 	&__text {
@@ -33,6 +56,7 @@
 		font-style: normal;
 		font-weight: 400;
 		line-height: normal;
+
 	}
 
 	&__button {
@@ -47,9 +71,15 @@
 		padding-top: rem(26);
 		display: flex;
 		gap: rem(33);
+
+		@media (max-width:$mobile) {
+			flex-direction: column;
+			gap: rem(58);
+		}
 	}
 
 	&__advantages-item {
+		flex: 1 0 50%;
 		position: relative;
 		max-width: rem(300);
 		padding: rem(36) rem(12) rem(13);
@@ -90,6 +120,13 @@
 		/* 634/1500 */
 		// @include adaptiveValue("max-width", 634, 500, 1900, 1500, 1);
 		// @include adaptiveValue("padding-right", 0, 50, 1900, 1500, 1);
+
+		@media (max-width:$mobile) {
+
+			margin-top: rem(74);
+			max-width: min(81.097561%, rem(500));
+			/* 266/328 */
+		}
 	}
 
 	&__image-wrapper {
@@ -103,6 +140,7 @@
 		height: auto;
 		perspective: 2000px;
 	}
+
 	&__image,
 	&__image--back {
 		position: absolute;
@@ -144,5 +182,16 @@
 		left: -20.347003%;
 		/* -129/634 */
 		background-image: url(@img/hero-bg.png);
+
+		@media (max-width:$mobile) {
+			z-index: -1;
+			inset: 4.5% -14.63% auto -5.18%;
+			width: 129.573171%;
+			/* 425/328 */
+			aspect-ratio: 1/1;
+			/* 1/1 */
+			height: auto;
+			transform: rotate(-11.795deg);
+		}
 	}
 }
