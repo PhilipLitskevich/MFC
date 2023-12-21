@@ -6,10 +6,11 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231219135918">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231221120706">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=fea225af-55b9-4955-bb23-c3187c0c1a7e&lang=ru_RU&_v=20231221120706"></script>
 </head>
 
 <body>
@@ -85,13 +86,11 @@
 							</li>
 						</ul>
 					</div>
-					<div class="hero__right">
-						<div class="hero__image-wrapper">
-							<div class="hero__image">
-								<!-- <picture><source srcset="img/meat-img.webp" type="image/webp"><img src="img/meat-img.png" alt=""></picture> -->
-							</div>
+					<div class="hero__right" data-da=".hero__content, 768, 3">
+						<div class="hero__image-wrapper" da>
+							<div class="hero__image"></div>
 							<div class="hero__image--back"></div>
-							<div class="hero__image-bg">
+							<div class="hero__image-bg" data-da=".hero__container, 768">
 								<!-- data-prlx-mouse -->
 							</div>
 						</div>
@@ -225,7 +224,7 @@
 					</div>
 				</div>
 			</section>
-			<secton class="section__why why" id="why">
+			<section class="section__why why" id="why">
 				<div class="why__container">
 					<h2 class="why__title title">
 						ПОЧЕМУ “МИТ ФРЕШ”
@@ -244,7 +243,7 @@
 							<span class="why__text">В неделю доставка заказов</span>
 						</li>
 						<li class="why__list-item">
-							<span class="why__number"><span class=" _count" data-target="101">0</span></span>
+							<span class="why__number"><span class=" _count" data-target="100">0</span></span>
 							<span class="why__text">Категорий товаров</span>
 						</li>
 						<li class="why__list-item">
@@ -254,7 +253,7 @@
 
 					</ul>
 				</div>
-			</secton>
+			</section>
 
 			<!-- </div> -->
 		</main>
@@ -280,13 +279,18 @@
 					<h3 class="footer__title-adress">
 						Адреса
 					</h3>
-					<p class="footer__adress-text">Московская область, Ярмарочная 10</p>
-					<p class="footer__adress-text">Мытищинская ярмарка Павильон 4-2,4-3,4-24,4-25</p>
-					<p class="footer__adress-text">Москва Рябиновая 47 <span>14 хладокомбинат</span></p>
+					<a href="https://yandex.by/maps/-/CDq8u2N1" class="footer__adress-link hvr-underline-from-center">
+						<span>Московская область, Ярмарочная 10</span>
+						<span>Мытищинская ярмарка</span>
+						<span>Павильон 4-2,4-3,4-24,4-25</span>
+					</a>
+					<a href="https://yandex.by/maps/-/CDq8yA3s" class="footer__adress-link hvr-underline-from-center">
+						<span>Москва Рябиновая 47 </span>
+						<span>14 хладокомбинат</span>
+					</a>
 				</div>
 			</div>
-			<div class="footer__map">
-				<!-- <picture><source srcset="img/map.webp" type="image/webp"><img src="img/map.png" alt="Карта" class="footer__map-img"></picture> -->
+			<div class="footer__map" id="map">
 			</div>
 		</footer>
 	</div>
@@ -302,7 +306,7 @@
 </div>
  -->
 
-	<script src="js/app.min.js?_v=20231219135918"></script>
+	<script src="js/app.min.js?_v=20231221120706"></script>
 </body>
 
 </html>
