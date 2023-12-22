@@ -2649,7 +2649,7 @@
         classes
     };
     const extendedDefaults = {};
-    class Swiper {
+    class swiper_core_Swiper {
         constructor() {
             let el;
             let params;
@@ -2665,7 +2665,7 @@
                     const newParams = utils_extend({}, params, {
                         el: containerEl
                     });
-                    swipers.push(new Swiper(newParams));
+                    swipers.push(new swiper_core_Swiper(newParams));
                 }));
                 return swipers;
             }
@@ -3037,25 +3037,25 @@
             return defaults;
         }
         static installModule(mod) {
-            if (!Swiper.prototype.__modules__) Swiper.prototype.__modules__ = [];
-            const modules = Swiper.prototype.__modules__;
+            if (!swiper_core_Swiper.prototype.__modules__) swiper_core_Swiper.prototype.__modules__ = [];
+            const modules = swiper_core_Swiper.prototype.__modules__;
             if (typeof mod === "function" && modules.indexOf(mod) < 0) modules.push(mod);
         }
         static use(module) {
             if (Array.isArray(module)) {
-                module.forEach((m => Swiper.installModule(m)));
-                return Swiper;
+                module.forEach((m => swiper_core_Swiper.installModule(m)));
+                return swiper_core_Swiper;
             }
-            Swiper.installModule(module);
-            return Swiper;
+            swiper_core_Swiper.installModule(module);
+            return swiper_core_Swiper;
         }
     }
     Object.keys(prototypes).forEach((prototypeGroup => {
         Object.keys(prototypes[prototypeGroup]).forEach((protoMethod => {
-            Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
+            swiper_core_Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
         }));
     }));
-    Swiper.use([ Resize, Observer ]);
+    swiper_core_Swiper.use([ Resize, Observer ]);
     function create_element_if_not_defined_createElementIfNotDefined(swiper, originalParams, params, checkProps) {
         if (swiper.params.createElements) Object.keys(checkProps).forEach((key => {
             if (!params[key] && params.auto === true) {
@@ -3220,23 +3220,11 @@
             destroy
         });
     }
-    if (typeof Navigation === "undefined") console.error("Module Navigation is not available");
-    const breakpoint = window.matchMedia("(max-width:48em)");
-    let aboutSwiper;
-    const breakpointChecker = function() {
-        if (breakpoint.matches === true) {
-            if (aboutSwiper !== void 0) {
-                aboutSwiper.destroy(true, true);
-                aboutSwiper = void 0;
-                console.log(aboutSwiper + " после разрушения");
-            }
-            return;
-        } else if (breakpoint.matches === false) enableSwiper();
-    };
-    const enableSwiper = function() {
-        aboutSwiper = new Swiper(".about__slider", {
+    function initSliders() {
+        if (document.querySelector(".about__slider")) new swiper_core_Swiper(".about__slider", {
             modules: [ Navigation ],
-            slidesPerGroupSkip: 0,
+            observer: true,
+            observeParents: true,
             slidesPerView: 1,
             spaceBetween: 0,
             autoHeight: true,
@@ -3245,12 +3233,13 @@
             navigation: {
                 prevEl: ".swiper-button-prev",
                 nextEl: ".swiper-button-next"
-            }
+            },
+            on: {}
         });
-        console.log(aboutSwiper + " после создания");
-    };
-    breakpoint.addListener(breakpointChecker);
-    breakpointChecker();
+    }
+    window.addEventListener("load", (function(e) {
+        initSliders();
+    }));
     class ScrollWatcher {
         constructor(props) {
             let defaultConfig = {
