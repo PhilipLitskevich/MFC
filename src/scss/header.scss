@@ -54,7 +54,7 @@ body[style*="padding-right: 17px"] {
 
 .logo-wrapper {
 	max-width: rem(198);
-	@include adaptiveValue("max-width", 198, 120, 1800, 1000);
+	@include adaptiveValue("max-width", 198, 120, 1800, 1000, 1);
 
 	.logo-img {
 		width: 100%;
@@ -76,10 +76,11 @@ body[style*="padding-right: 17px"] {
 .menu__body {
 	display: flex;
 	align-items: flex-end;
-	@include adaptiveValue("margin-left", 60, 40, $containerWidth, 768);
+	@include adaptiveValue("margin-left", 60, 40, $containerWidth, 768, 2);
 	padding: rem(10) 0;
 
 	@media (max-width:$mobile) {
+		
 		box-sizing: border-box;
 		position: fixed;
 		z-index: 1;
@@ -111,7 +112,7 @@ body[style*="padding-right: 17px"] {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	@include adaptiveValue("column-gap", 24, 15, $containerWidth, 768);
+	@include adaptiveValue("column-gap", 24, 15, $containerWidth, 768, 1);
 	row-gap: rem(20);
 
 
@@ -130,7 +131,7 @@ body[style*="padding-right: 17px"] {
 
 .menu__link {
 	color: $secondMainColor;
-	@include adaptiveValue("font-size", 20, 16, $containerWidth, 768);
+	@include adaptiveValue("font-size", 20, 16, $containerWidth, 768, 1);
 	overflow: visible;
 
 	&.hvr-underline-from-center::before {

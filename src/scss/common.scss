@@ -9,7 +9,7 @@
 	/* 96.125px */
 
 	&:not(.about__title, .hero-title) {
-		@include adaptiveValue("font-size", 80, 50, $containerWidth, 360);
+		@include adaptiveValue("font-size", 80, 40, $containerWidth, 320, 1);
 	}
 }
 

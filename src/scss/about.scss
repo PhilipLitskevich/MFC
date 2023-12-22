@@ -1,5 +1,5 @@
 .section-about {
-	padding-top: rem(128);
+	@include adaptiveValue("padding-top", 128, 40, $containerWidth, 360, 1);
 }
 
 .about {
@@ -7,7 +7,7 @@
 
 	&__title {
 		max-width: rem(980);
-		@include adaptiveValue("font-size", 80, 35, $containerWidth, 400);
+		@include adaptiveValue("font-size", 80, 35, $containerWidth, 400, 1);
 
 		@media (max-width:$mobile) {
 			text-align: center;
@@ -89,7 +89,7 @@
 	}
 
 	&__slide-title {
-		@include adaptiveValue("font-size", 50, 30, $containerWidth, 400);
+		@include adaptiveValue("font-size", 50, 30, $containerWidth, 400, 1);
 
 		font-weight: 600;
 		line-height: 120.157%;
@@ -103,7 +103,7 @@
 	}
 
 	&__slide-text {
-		@include adaptiveValue("font-size", 20, 13, $containerWidth, 400);
+		@include adaptiveValue("font-size", 20, 13, $containerWidth, 400, 1);
 		line-height: 120.157%;
 		/* 24.031px */
 		margin-top: rem(9);

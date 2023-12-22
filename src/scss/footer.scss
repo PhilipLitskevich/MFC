@@ -2,10 +2,10 @@
 .footer {
 	position: relative;
 	margin-top: rem(58);
-	@include adaptiveValue("margin-top", 58, 53, $containerWidth, 400);
+	@include adaptiveValue("margin-top", 58, 53, $containerWidth, 400, 1);
 
-	@include adaptiveValue("padding-top", 64, 36, $containerWidth, 400);
-	@include adaptiveValue("padding-bottom", 64, 44, $containerWidth, 400);
+	@include adaptiveValue("padding-top", 64, 36, $containerWidth, 400, 1);
+	@include adaptiveValue("padding-bottom", 64, 44, $containerWidth, 400, 1);
 	background-color: $secondMainColor;
 
 	&__container {
@@ -25,7 +25,7 @@
 
 	&__left {
 		flex: 0 1;
-		@include adaptiveValue("flex-basis", 450, 300, $containerWidth, 768);
+		@include adaptiveValue("flex-basis", 450, 300, $containerWidth, 768, 1);
 
 		@media (max-width:$mobile){
 			 flex-basis: auto; 
@@ -63,24 +63,24 @@
 		}
 
 		&--email {
-			@include adaptiveValue("font-size", 18, 15, $containerWidth, 400);
-			@include adaptiveValue("padding-top", 19, 17, $containerWidth, 400);
-			@include adaptiveValue("padding-right", 53, 22, $containerWidth, 400);
-			@include adaptiveValue("padding-bottom", 18, 17, $containerWidth, 400);
-			@include adaptiveValue("padding-left", 53, 22, $containerWidth, 400);
+			@include adaptiveValue("font-size", 18, 15, $containerWidth, 400, 1);
+			@include adaptiveValue("padding-top", 19, 17, $containerWidth, 400, 1);
+			@include adaptiveValue("padding-right", 53, 22, $containerWidth, 400, 1);
+			@include adaptiveValue("padding-bottom", 18, 17, $containerWidth, 400, 1);
+			@include adaptiveValue("padding-left", 53, 22, $containerWidth, 400, 1);
 			width: fit-content;
 		}
 
 		&--tel {
 			padding: rem(21) rem(32) rem(19);
-			@include adaptiveValue("padding-top", 21, 17, $containerWidth, 400);
-			@include adaptiveValue("padding-right", 32, 22, $containerWidth, 400);
-			@include adaptiveValue("padding-bottom", 19, 17, $containerWidth, 400);
-			@include adaptiveValue("padding-left", 32, 22, $containerWidth, 400);
+			@include adaptiveValue("padding-top", 21, 17, $containerWidth, 400, 1);
+			@include adaptiveValue("padding-right", 32, 22, $containerWidth, 400, 1);
+			@include adaptiveValue("padding-bottom", 19, 17, $containerWidth, 400, 1);
+			@include adaptiveValue("padding-left", 32, 22, $containerWidth, 400, 1);
 		}
 
 		&--whatsapp {
-			@include adaptiveValue("padding", 15, 12, $containerWidth, 400);
+			@include adaptiveValue("padding", 15, 12, $containerWidth, 400, 1);
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -111,7 +111,7 @@
 	&__title-adress {
 		color: #FFF;
 		font-family: Unbounded, sans-serif;
-		@include adaptiveValue("font-size", 20, 18, $containerWidth, 400);
+		@include adaptiveValue("font-size", 20, 18, $containerWidth, 400, 1);
 		font-weight: 500;
 		margin-bottom: rem(15);
 	}
@@ -120,7 +120,7 @@
 		display: block;
 		color: #FFF;
 		font-family: Unbounded, sans-serif;
-		@include adaptiveValue("font-size", 15, 13, $containerWidth, 400);
+		@include adaptiveValue("font-size", 15, 13, $containerWidth, 400, 1);
 		font-weight: 400;
 		line-height: 120%; /* 18/15 */
 
