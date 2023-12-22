@@ -13,7 +13,7 @@
 
 	&__wrapper {
 		margin-top: rem(30);
-		@include adaptiveValue("gap", 142, 40, 1900, 800, 1);
+		@include adaptiveValue("gap", 142, 40, 1900, 800);
 		display: flex;
 		// justify-content: space-between;
 
@@ -31,11 +31,11 @@
 
 	&__moscow-title,
 	&__russia-title {
-		@include adaptiveValue("font-size", 35, 20, $containerWidth, 400, 1);
+		@include adaptiveValue("font-size", 35, 20, $containerWidth, 400);
 		font-weight: 400;
 		line-height: 120.157%;
 		/* 42.055px */
-		@include adaptiveValue("margin-bottom", 15, 11, $containerWidth, 400, 1);
+		@include adaptiveValue("margin-bottom", 15, 11, $containerWidth, 400);
 	}
 
 	&__russia {
@@ -43,7 +43,7 @@
 		flex: 0 1 30%;
 
 		.delivery__list-item:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 15, 6, $containerWidth, 400, 1);
+			@include adaptiveValue("margin-bottom", 15, 6, $containerWidth, 400);
 		}
 	}
 
@@ -52,7 +52,7 @@
 	&__list {}
 
 	&__list-item {
-		@include adaptiveValue("font-size", 25, 13, $containerWidth, 400, 1);
+		@include adaptiveValue("font-size", 25, 13, $containerWidth, 400);
 		font-weight: 400;
 		line-height: 120.157%;
 		/* 30.039px */

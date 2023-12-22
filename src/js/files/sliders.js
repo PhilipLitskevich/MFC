@@ -8,11 +8,7 @@
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import {Navigation} from 'swiper/modules';
-
-if (typeof Navigation === 'undefined') {
-  console.error('Module Navigation is not available');
-}
+import { Navigation } from 'swiper/modules';
 
 // Стили Swiper
 // Базовые стили
@@ -22,45 +18,33 @@ import "../../scss/base/swiper.scss";
 // Полный набор стилей из node_modules
 // import 'swiper/css';
 
-// breakpoint where swiper will be destroyed
-// and switches to a dual-column layout
-const breakpoint = window.matchMedia( '(max-width:48em)' );
-// keep track of swiper instances to destroy later
-let aboutSwiper; 
+const breakpoint = window.matchMedia('(max-width: 768px)');
 
-//////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////
+let aboutSwiper;
 
-const breakpointChecker = function() {
-	// if larger viewport and multi-row layout needed
+const breakpointChecker = function () {
 	if (breakpoint.matches === true) {
-		 // clean up old instances and inline styles when available
-		 if (aboutSwiper !== undefined) {
-				aboutSwiper.destroy(true, true);
-				aboutSwiper = undefined;
-				console.log(aboutSwiper + ' после разрушения')
-		 }
-		 // or/and do nothing
-		 return;
-	// else if a small viewport and single column layout needed
+		if (aboutSwiper !== undefined) {
+			aboutSwiper.detachEvents();
+			aboutSwiper.destroy(true, true);
+			document.querySelectorAll('.swiper-slide, .swiper-wrapper').forEach((elem) => { elem.removeAttribute("style") })
+		}
+		return;
 	} else if (breakpoint.matches === false) {
-		 // fire small viewport version of swiper
-		 enableSwiper();
+		enableSwiper();
 	}
 };
 
-//////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////
 
-const enableSwiper = function() {
-  aboutSwiper = new Swiper('.about__slider', { // Указываем скласс нужного слайдера
+
+const enableSwiper = function () {
+	aboutSwiper = new Swiper('.about__slider', { // Указываем скласс нужного слайдера
 		// Подключаем модули слайдера
 		// для конкретного случая
 		modules: [Navigation],
-
-		slidesPerGroupSkip: 0, // установите значение по умолчанию
+		centeredSlides: true,
+		a11y: true,
+		grabCursor: true,
 		slidesPerView: 1,
 		spaceBetween: 0,
 		autoHeight: true,
@@ -73,7 +57,6 @@ const enableSwiper = function() {
 			nextEl: '.swiper-button-next',
 		},
 	});
-	console.log(aboutSwiper + ' после создания')
 };
 
 //////////////////////////////////////////////////////////////////
@@ -81,6 +64,9 @@ const enableSwiper = function() {
 //////////////////////////////////////////////////////////////////
 
 // keep an eye on viewport size changes
-breakpoint.addListener(breakpointChecker);
+breakpoint.addEventListener('change', () => {
+	breakpointChecker();
+}
+);
 // kickstart
 breakpointChecker();

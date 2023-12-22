@@ -7,11 +7,11 @@
 
 	&__title {
 		max-width: rem(980);
-		@include adaptiveValue("font-size", 80, 35, $containerWidth, 400, 1);
+		@include adaptiveValue("font-size", 80, 35, $containerWidth, 400);
 
 		@media (max-width:$mobile) {
 			text-align: center;
-			@include adaptiveValue("max-width", 500, 400, 768, 400, 1);
+			@include adaptiveValue("max-width", 500, 400, 768, 400);
 			margin: 0 auto;
 		}
 	}
@@ -89,7 +89,7 @@
 	}
 
 	&__slide-title {
-		@include adaptiveValue("font-size", 50, 30, $containerWidth, 400, 1);
+		@include adaptiveValue("font-size", 50, 30, $containerWidth, 400);
 
 		font-weight: 600;
 		line-height: 120.157%;
@@ -103,7 +103,7 @@
 	}
 
 	&__slide-text {
-		@include adaptiveValue("font-size", 20, 13, $containerWidth, 400, 1);
+		@include adaptiveValue("font-size", 20, 13, $containerWidth, 400);
 		line-height: 120.157%;
 		/* 24.031px */
 		margin-top: rem(9);
@@ -119,7 +119,7 @@
 
 
 			.about__slide-image {
-				@include adaptiveValue("width", 353, 289, $containerWidth, 768, 1);
+				@include adaptiveValue("width", 353, 289, $containerWidth, 768);
 				// height: rem(235);
 				aspect-ratio: 353/235;
 				border-radius: 35px;

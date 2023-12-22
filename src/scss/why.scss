@@ -11,7 +11,7 @@
 		 text-align: center; 
 	}
 	@media (max-width:$mobileSmall){
-		@include adaptiveValue("font-size", 50, 40, 360, 320, 1); 
+		@include adaptiveValue("font-size", 50, 40, 360, 320); 
 	}
 }
 
@@ -21,7 +21,7 @@
 	width: fit-content;
 	grid-template-rows: repeat(2, 1fr);
 	grid-template-columns: repeat(3, 1fr);
-	@include adaptiveValue("gap", 60, 53, $containerWidth, 400, 1);
+	@include adaptiveValue("gap", 60, 53, $containerWidth, 400);
 	@media (max-width: em(900)){
 		margin: rem(30) auto 0;
 		grid-template-columns: repeat(2, 1fr); 

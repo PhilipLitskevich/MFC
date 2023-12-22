@@ -13,7 +13,6 @@
 		/* 277/925 */
 
 		gap: rem(27);
-		// @include adaptiveValue("gap", 27, 50, 1900, 1500, 1);
 
 		@media (max-width:$mobile) {
 			box-sizing: border-box;
@@ -39,12 +38,12 @@
 
 	&-title {
 		// max-width: 95%;
-		@include adaptiveValue("font-size", 80, 40, 1900, 768, 1);
+		@include adaptiveValue("font-size", 80, 40, 1900, 768, 2);
 
 		@media (max-width:$mobile) {
 			text-align: center;
-			@include adaptiveValue("max-width", 500, 324, 768, 360, 1);
-			@include adaptiveValue("font-size", 50, 25, 768, 360, 1);
+			@include adaptiveValue("max-width", 500, 324, 768, 360);
+			@include adaptiveValue("font-size", 50, 25, 768, 320);
 		}
 	}
 
@@ -52,7 +51,7 @@
 		margin-top: rem(9);
 
 		color: rgba(0, 0, 0, 0.70);
-		@include adaptiveValue("font-size", 22, 13, 1900, 700, 1);
+		@include adaptiveValue("font-size", 22, 13, 1900, 700);
 		font-style: normal;
 		font-weight: 400;
 		line-height: normal;
@@ -63,7 +62,7 @@
 		margin-top: rem(36);
 		padding: rem(17) rem(48);
 
-		@include adaptiveValue("font-size", 20, 15, $containerWidth, 400, 1);
+		@include adaptiveValue("font-size", 20, 15, $containerWidth, 400);
 	}
 
 	&__advantages {
@@ -108,7 +107,7 @@
 		color: #000;
 		text-align: center;
 		font-size: rem(16);
-		@include adaptiveValue("font-size", 16, 14, $containerWidth, 700, 1);
+		@include adaptiveValue("font-size", 16, 14, $containerWidth, 700);
 		font-weight: 400;
 		line-height: 112.496%;
 		/* 17.999px */
