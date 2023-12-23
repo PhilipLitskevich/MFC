@@ -3,10 +3,14 @@
 
 .button {
 	display: inline-flex;
-	padding: 18px 2.9em;
+	@include adaptiveValue("padding-top", 25, 15, $containerWidth, 320, 1);
+	@include adaptiveValue("padding-right", 73, 60, $containerWidth, 320, 1);
+	@include adaptiveValue("padding-bottom", 25, 14, $containerWidth, 320, 1);
+	@include adaptiveValue("padding-left", 73, 60, $containerWidth, 320, 1);
+	@include adaptiveValue("font-size", 25, 20, $containerWidth, 320, 1);
 	color: #FFF;
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: normal;
 	text-align: center;
 	border-radius: 73px;

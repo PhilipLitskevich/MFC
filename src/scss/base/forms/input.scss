@@ -13,9 +13,19 @@ textarea {
 	width: 100%;
 	display: block;
 	padding: rem(30) rem(27) rem(24);
+	@include adaptiveValue("padding-top", 30, 15, $containerWidth, 320, 1);
+	@include adaptiveValue("padding-right", 27, 18, $containerWidth, 320, 1);
+	@include adaptiveValue("padding-bottom", 24, 14, $containerWidth, 320, 1);
+	@include adaptiveValue("padding-left", 27, 18, $containerWidth, 320, 1);
 	border-radius: 66px !important;
 	border: 2px solid $secondMainColor;
 	background-color: transparent;
+	font-family: Unbounded;
+	color: rgba(0, 0, 0, 0.40);
+	@include adaptiveValue("font-size", 20, 16, $containerWidth, 320, 1);
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
 
 	&._form-focus {
 		background: rgba($color: #fff, $alpha: .5);
@@ -23,6 +33,15 @@ textarea {
 
 	&._form-error {
 		background: rgba($color: $secondMainColor, $alpha: .3);
+	}
+
+	&::placeholder {
+		font-family: Unbounded;
+		@include adaptiveValue("font-size", 20, 16, $containerWidth, 320, 1);
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		color: rgba(0, 0, 0, 0.40);
 	}
 }
 

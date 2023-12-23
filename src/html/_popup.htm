@@ -12,11 +12,11 @@
 			<form action="https://jsonplaceholder.typicode.com/posts" method="post" autocomplete="on" class="popup__form form" data-popup-message="#form-message" data-dev>
 
 				<label for="popup-company" data-hidden>Организация</label>
-				<input id="popup-company" autocomplete="off" type="text" name="company" placeholder="Организация" maxlength="20"
+				<input id="popup-company" autocomplete="off" type="text" name="company" placeholder="Организация" maxlength="35"
 					class="input" data-required data-validate data-error="Не введена Организация" required>
 
 				<label for="popup-name" data-hidden>Ваше имя</label>
-				<input id="popup-name" autocomplete="off" type="text" name="name" placeholder="Ваше имя" maxlength="20"
+				<input id="popup-name" autocomplete="off" type="text" name="name" placeholder="Ваше имя" maxlength="35"
 					class="input" data-required data-validate data-error="Не введено Имя" required>
 
 				<label for="popup-phone" data-hidden>Телефон</label>
@@ -25,7 +25,7 @@
 					required data-hidden data-error="Не введен телефон">
 
 				<label for="popup-email" data-hidden>E-mail</label>
-				<input id="popup-email" class="input" required data-required="email" data-validate type="emails" name="email" placeholder="E-mail" data-error="Введен не верный E-mail">
+				<input id="popup-email" class="input" required data-required="email" data-validate type="emails" name="email" placeholder="E-mail" data-error="Введен не верный E-mail"  maxlength="50">
 
 				<button type="submit" class="popup__button button" aria-label="Отправить"><span>Отправить</span></button>
 			</form>

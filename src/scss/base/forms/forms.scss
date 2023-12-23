@@ -23,7 +23,8 @@
 .form__error {
 	color: red;
 	width: fit-content;
-	margin: 0 auto
+	margin: 0 auto;
+	@include adaptiveValue("font-size", 20, 14, $containerWidth, 320, 1);
 }
 //</FORM>
 
