@@ -6,11 +6,11 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231223142923">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231223152403">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://api-maps.yandex.ru/2.1/?apikey=fea225af-55b9-4955-bb23-c3187c0c1a7e&lang=ru_RU&_v=20231223142923"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=fea225af-55b9-4955-bb23-c3187c0c1a7e&lang=ru_RU&_v=20231223152403"></script>
 </head>
 
 <body>
@@ -306,16 +306,16 @@
 				<form action="https://jsonplaceholder.typicode.com/posts" method="post" autocomplete="on" class="popup__form form" data-popup-message="#form-message" data-dev>
 
 					<label for="popup-company" data-hidden>Организация</label>
-					<input id="popup-company" autocomplete="off" type="text" name="company" placeholder="Организация" maxlength="20" class="input" data-required data-validate data-error="Не введена Организация" required>
+					<input id="popup-company" autocomplete="off" type="text" name="company" placeholder="Организация" maxlength="35" class="input" data-required data-validate data-error="Не введена Организация" required>
 
 					<label for="popup-name" data-hidden>Ваше имя</label>
-					<input id="popup-name" autocomplete="off" type="text" name="name" placeholder="Ваше имя" maxlength="20" class="input" data-required data-validate data-error="Не введено Имя" required>
+					<input id="popup-name" autocomplete="off" type="text" name="name" placeholder="Ваше имя" maxlength="35" class="input" data-required data-validate data-error="Не введено Имя" required>
 
 					<label for="popup-phone" data-hidden>Телефон</label>
 					<input id="popup-phone" autocomplete="off" type="tel" name="phone" placeholder="Телефон" data-inputmask="'mask': '+7 (999) 999-999'" class="input" data-required data-validate required data-hidden data-error="Не введен телефон">
 
 					<label for="popup-email" data-hidden>E-mail</label>
-					<input id="popup-email" class="input" required data-required="email" data-validate type="emails" name="email" placeholder="E-mail" data-error="Введен не верный E-mail">
+					<input id="popup-email" class="input" required data-required="email" data-validate type="emails" name="email" placeholder="E-mail" data-error="Введен не верный E-mail" maxlength="50">
 
 					<button type="submit" class="popup__button button" aria-label="Отправить"><span>Отправить</span></button>
 				</form>
@@ -339,7 +339,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20231223142923"></script>
+	<script src="js/app.min.js?_v=20231223152403"></script>
 </body>
 
 </html>
