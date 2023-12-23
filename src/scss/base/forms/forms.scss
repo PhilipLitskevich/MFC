@@ -1,6 +1,11 @@
 //<FORM>
 // Снипет (HTML):
 .form {
+	max-width: rem(553);
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: rem(32);
 	&__row {
 	}
 	&__column {
@@ -14,6 +19,12 @@
 	&__error {
 	}
 }
+
+.form__error {
+	color: red;
+	width: fit-content;
+	margin: 0 auto
+}
 //</FORM>
 
 // <BUTTONS>
@@ -22,7 +33,7 @@
 
 // <INPUTS>
 // Снипет (HTML): inp
-// @import "input";
+@import "input";
 
 // <CHECK>
 // Снипет (HTML): chk

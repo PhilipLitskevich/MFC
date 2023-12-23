@@ -93,3 +93,9 @@ if (!isMobile.any()) {
 		}, 1000)
 	})
 }
+
+document.addEventListener("formSent", function (e) {
+	// Форма
+	const currentForm= e.detail.form;
+	document.querySelector('html').classList.remove('lock')
+});

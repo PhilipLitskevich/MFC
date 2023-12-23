@@ -1,11 +1,53 @@
-<!-- 
-<div id="popup" aria-hidden="true" class="popup">
+<div id="popup-form" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
-			</div>
+			<button data-close type="button" class="popup__close">
+				<svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
+					<path
+						d="M31.175 24L45.2688 9.90625C47.3188 7.85625 47.3188 4.78125 45.2688 2.73125C44.5 1.70625 43.2188 0.9375 41.9375 0.9375C40.6563 0.9375 39.375 1.45 38.35 2.475L24 16.825L9.90625 2.73125C7.85625 0.681249 4.525 0.681249 2.73125 2.73125C1.70625 3.5 0.9375 4.78125 0.9375 6.31875C0.9375 7.85625 1.45 8.88125 2.475 9.90625L16.5688 24L2.475 38.0938C1.70625 39.1188 0.9375 40.4 0.9375 41.9375C0.9375 43.2188 1.45 44.5 2.475 45.525C3.5 46.55 4.78125 47.0625 6.0625 47.0625C7.34375 47.0625 8.625 46.55 9.65 45.525L23.7438 31.4312L37.8375 45.525C39.8875 47.575 43.2188 47.575 45.0125 45.525C47.0625 43.475 47.0625 40.1437 45.0125 38.35L31.175 24Z"
+						fill="black" />
+				</svg>
+			</button>
+			<h2 class="popup__title">Оставьте заявку и получите <span class="title--red">моментальный ответ!</span></h2>
+			<form action="https://jsonplaceholder.typicode.com/posts" method="post" autocomplete="on" class="popup__form form" data-popup-message="#form-message" data-dev>
+
+				<label for="popup-company" data-hidden>Организация</label>
+				<input id="popup-company" autocomplete="off" type="text" name="company" placeholder="Организация" maxlength="20"
+					class="input" data-required data-validate data-error="Не введена Организация" required>
+
+				<label for="popup-name" data-hidden>Ваше имя</label>
+				<input id="popup-name" autocomplete="off" type="text" name="name" placeholder="Ваше имя" maxlength="20"
+					class="input" data-required data-validate data-error="Не введено Имя" required>
+
+				<label for="popup-phone" data-hidden>Телефон</label>
+				<input id="popup-phone" autocomplete="off" type="tel" name="phone" placeholder="Телефон"
+					data-inputmask="'mask': '+7 (999) 999-999'" class="input" data-required data-validate
+					required data-hidden data-error="Не введен телефон">
+
+				<label for="popup-email" data-hidden>E-mail</label>
+				<input id="popup-email" class="input" required data-required="email" data-validate type="emails" name="email" placeholder="E-mail" data-error="Введен не верный E-mail">
+
+				<button type="submit" class="popup__button button" aria-label="Отправить"><span>Отправить</span></button>
+			</form>
 		</div>
 	</div>
 </div>
- -->
+
+<div id="form-message" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">
+				<svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
+					<path
+						d="M31.175 24L45.2688 9.90625C47.3188 7.85625 47.3188 4.78125 45.2688 2.73125C44.5 1.70625 43.2188 0.9375 41.9375 0.9375C40.6563 0.9375 39.375 1.45 38.35 2.475L24 16.825L9.90625 2.73125C7.85625 0.681249 4.525 0.681249 2.73125 2.73125C1.70625 3.5 0.9375 4.78125 0.9375 6.31875C0.9375 7.85625 1.45 8.88125 2.475 9.90625L16.5688 24L2.475 38.0938C1.70625 39.1188 0.9375 40.4 0.9375 41.9375C0.9375 43.2188 1.45 44.5 2.475 45.525C3.5 46.55 4.78125 47.0625 6.0625 47.0625C7.34375 47.0625 8.625 46.55 9.65 45.525L23.7438 31.4312L37.8375 45.525C39.8875 47.575 43.2188 47.575 45.0125 45.525C47.0625 43.475 47.0625 40.1437 45.0125 38.35L31.175 24Z"
+						fill="black" />
+				</svg>
+			</button>
+			<h2 class="popup__title">Спасибо за вашу заявку!</h2>
+			<div class="popup__text">
+				<p>Мы обязательно ответим в ближайшее время</p>
+			</div>
+			<a href="#" data-close class="popup__button button" data-goto="#hero">На главную</a>
+		</div>
+	</div>
+</div>
