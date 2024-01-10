@@ -83,8 +83,8 @@
 			max-width: 50%;
 		}
 
-		@media (max-width:em(768)) {
-			max-width: none;
+		@media (max-width: em(768)) {
+			max-width: none !important;
 		}
 	}
 
