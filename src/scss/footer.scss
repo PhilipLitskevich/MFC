@@ -16,15 +16,23 @@
 		display: flex;
 		@include adaptiveValue("gap", 70, 46, 1100, 768, 1);
 
-		@media (max-width: em(600)) {
+		@media (max-width: em(600)){
 			flex-direction: column;
-			align-items: center;
+			align-items: flex-start;
+		}
+		@media (max-width:$mobileSmall){
+			  align-items: center;
 		}
 	}
 
 	&__title {
 		margin-bottom: rem(12);
 		color: #fff;
+
+		@media (max-width: em(600)){
+			  text-align: center;
+				font-size: rem(50) !important;
+		}
 	}
 
 	&__left {
@@ -33,6 +41,11 @@
 
 		@media (max-width:$mobile) {
 			flex-basis: auto;
+		}
+
+		@media (max-width: em(600)) and (min-width: $mobileSmall){
+			width: 100%;
+			padding: 0 rem(20);
 		}
 	}
 
@@ -67,12 +80,18 @@
 		}
 
 		&--email {
-			@include adaptiveValue("font-size", 18, 15, $containerWidth, 400, 1);
+			@include adaptiveValue("font-size", 18, 15, $containerWidth, 600, 2);
 			@include adaptiveValue("padding-top", 19, 17, $containerWidth, 400, 1);
 			@include adaptiveValue("padding-right", 53, 22, $containerWidth, 400, 1);
 			@include adaptiveValue("padding-bottom", 18, 17, $containerWidth, 400, 1);
 			@include adaptiveValue("padding-left", 53, 22, $containerWidth, 400, 1);
 			width: fit-content;
+
+			@media (max-width: em(600)) and (min-width: $mobileSmall){
+				  width: 100%;
+					text-align: center;
+					@include adaptiveValue("font-size", 18, 15, 600, 480, 1);
+			}
 		}
 
 		&--tel {
@@ -81,6 +100,11 @@
 			@include adaptiveValue("padding-right", 32, 22, $containerWidth, 400, 1);
 			@include adaptiveValue("padding-bottom", 19, 17, $containerWidth, 400, 1);
 			@include adaptiveValue("padding-left", 32, 22, $containerWidth, 400, 1);
+
+			@media (max-width: em(600)) and (min-width: $mobileSmall){
+				  width: 100%;
+					text-align: center;
+			}
 		}
 
 		&--whatsapp {
@@ -98,13 +122,24 @@
 			border: none;
 
 			width: fit-content;
+
+			@media (max-width: em(600)) and (min-width: $mobileSmall){
+				width: 100%;
+				text-align: center;
+			}
 		}
+
+
 	}
 
 	&__links-wrapper {
 		margin-top: rem(25);
 		display: flex;
 		gap: rem(19);
+
+		@media (max-width: em(600)) and (min-width: $mobileSmall){
+			width: 100%;
+		}
 	}
 
 	&__right {
@@ -117,7 +152,12 @@
 
 		@media (max-width: em(600)) {
 			flex-basis: auto;
-			;
+		}
+
+		@media (max-width: em(600)) and (min-width: $mobileSmall){
+			width: 100%;
+			padding: 0 rem(20);
+			align-items: center;
 		}
 	}
 
@@ -127,6 +167,10 @@
 		@include adaptiveValue("font-size", 20, 18, $containerWidth, 400, 1);
 		font-weight: 500;
 		margin-bottom: rem(15);
+
+		@media (max-width: em(600)) and (min-width: $mobileSmall){
+			text-align: center;
+		}
 	}
 
 	&__adress-link {
@@ -149,16 +193,19 @@
 		&:hover {
 			text-decoration: underline;
 		}
+
+		@media (max-width: em(600)) and (min-width: $mobileSmall){
+			  text-align: center;
+		}
 	}
 
 	&__map {
 		position: absolute;
 		inset: auto 0 0 auto;
 		height: 100%;
-		background-color: $secondMainColor;
 		@include adaptiveValue("width", 751, 250, 1900, 1200, 1);
 
-		background: url('@img/map.png');
+		background-image: url('@img/map.png');
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -177,7 +224,7 @@
 
 		@media (max-width: em(1200)) {
 			position: relative;
-			margin-top: rem(50);
+			margin-top: rem(30);
 			width: 100%;
 			height: rem(420);
 
